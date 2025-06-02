@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct BreedDetailView: View {
+    @Environment(\.dismiss) private var dismiss
+    
+    enum ViewTraits {
+        static let imageCornerRadius: CGFloat = 12
+        static let spacing: CGFloat = 16
+    }
+    
     let breedDetailViewModel: BreedDetailViewModel
     
     init(breed: Breed) {
@@ -15,19 +22,39 @@ struct BreedDetailView: View {
     }
     
     var body: some View {
-        VStack {
-            Text(breedDetailViewModel.name)
-                .font(.title)
-            if let imageURL = breedDetailViewModel.imageURL {
-                AsyncImage(url: imageURL) { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                } placeholder: {
-                    ProgressView()
+        NavigationStack {
+            ScrollView {
+                VStack(spacing: ViewTraits.spacing) {
+                    Text(breedDetailViewModel.name)
+                        .font(.largeTitle)
+                        .bold()
+                        .multilineTextAlignment(.center)
+                    
+                    if let url = breedDetailViewModel.imageURL {
+                        AsyncImage(url: url) { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .cornerRadius(ViewTraits.imageCornerRadius)
+                        } placeholder: {
+                            ProgressView()
+                        }
+                        .frame(maxWidth: .infinity)
+                    } else {
+                        ProgressView("Loading image...")
+                    }
+                    Spacer()
                 }
-            } else {
-                ProgressView()
+                .padding()
+            }
+            .navigationTitle("Breed Details")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    BackButton(title: "List") {
+                        dismiss()
+                    }
+                }
             }
         }
         .task {
@@ -35,7 +62,6 @@ struct BreedDetailView: View {
         }
     }
 }
-
 #Preview {
     BreedDetailView(breed: .mock)
 }
