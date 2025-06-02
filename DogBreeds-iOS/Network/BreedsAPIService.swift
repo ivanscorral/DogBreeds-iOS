@@ -1,5 +1,5 @@
 //
-//  DogAPIService.swift
+//  BreedsAPIService.swift
 //  DogBreeds-iOS
 //
 //  Created by Ivan Sanchez Corral on 2/6/25.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-final class DogAPIService {
-    static let shared = DogAPIService()
+final class BreedsAPIService {
+    static let shared = BreedsAPIService()
     
     private init() {}
     

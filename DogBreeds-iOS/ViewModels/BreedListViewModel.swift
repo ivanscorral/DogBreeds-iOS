@@ -24,14 +24,13 @@ final class BreedListViewModel {
         }
     }
     
-    private let apiService = DogAPIService.shared
+    private let apiService = BreedsAPIService.shared
     
     func loadBreeds() async {
         do {
             try await Task.sleep(nanoseconds: 2_000_000_000)
             let fetchedBreeds = try await apiService.fetchAllBreeds()
             breeds = fetchedBreeds
-            print("Fetched breeds: \(breeds)")
         } catch {
             print("Error fetching breeds: \(error)")
             breeds = []
