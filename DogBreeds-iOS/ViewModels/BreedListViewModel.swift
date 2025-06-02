@@ -10,7 +10,7 @@ import Foundation
 @Observable
 final class BreedListViewModel {
     var breeds: [Breed] = []
-    var isLoading: Bool = true
+    var isLoading: Bool = false
     var searchText: String = ""
     
     var filteredBreeds: [Breed] {
@@ -27,8 +27,9 @@ final class BreedListViewModel {
     private let apiService = BreedsAPIService.shared
     
     func loadBreeds() async {
+        guard breeds.isEmpty else { return }
+        isLoading = true
         do {
-            try await Task.sleep(nanoseconds: 2_000_000_000)
             let fetchedBreeds = try await apiService.fetchAllBreeds()
             breeds = fetchedBreeds
         } catch {

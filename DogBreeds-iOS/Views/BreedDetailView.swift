@@ -8,12 +8,31 @@
 import SwiftUI
 
 struct BreedDetailView: View {
-    let breed: Breed
+    let breedDetailViewModel: BreedDetailViewModel
+    
+    init(breed: Breed) {
+        self.breedDetailViewModel = .init(breed: breed)
+    }
+    
     var body: some View {
-        Text("\(breed.fullName)")
-            .font(.title)
-            .navigationTitle(breed.fullName)
-            .padding()
+        VStack {
+            Text(breedDetailViewModel.name)
+                .font(.title)
+            if let imageURL = breedDetailViewModel.imageURL {
+                AsyncImage(url: imageURL) { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                } placeholder: {
+                    ProgressView()
+                }
+            } else {
+                ProgressView()
+            }
+        }
+        .task {
+            await breedDetailViewModel.loadImage()
+        }
     }
 }
 
