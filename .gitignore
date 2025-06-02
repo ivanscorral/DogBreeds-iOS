@@ -1,0 +1,149 @@
+# Xcode
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+*.xcworkspace/*
+!*.xcworkspace/contents.xcworkspacedata
+!*.xcworkspace/xcshareddata/
+
+# SwiftPM
+/.build/
+/Packages/
+/.swiftpm/xcode/package.xcworkspace/
+
+# Derived data & build products
+DerivedData/
+/build/
+/Build/
+
+# Xcode automatic backup files
+*.moved-aside
+*.xcuserdatad
+
+# CocoaPods
+Pods/
+/Podfile.lock
+
+# Carthage
+Carthage/Build/
+
+# Swift Package Manager
+.swiftpm/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+
+# Archives
+*.xcarchive
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# SwiftPM binaries
+.build/
+
+# Dependency manager logs
+Cartfile.resolved
+Package.resolved
+
+# User-specific files
+*.swp
+*.swo
+*~
+
+# IDEs
+.idea/
+.vscode/
+
+# macOS files
+.DS_Store
+
+# Xcode Cloud
+.xcresults/
+
+# CI
+.env
+*.xcresult
+
+# Log files
+*.log# Xcode
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+*.xcworkspace/*
+!*.xcworkspace/contents.xcworkspacedata
+!*.xcworkspace/xcshareddata/
+
+# SwiftPM
+/.build/
+/Packages/
+/.swiftpm/xcode/package.xcworkspace/
+
+# Derived data & build products
+DerivedData/
+/build/
+/Build/
+
+# Xcode automatic backup files
+*.moved-aside
+*.xcuserdatad
+
+# CocoaPods
+Pods/
+/Podfile.lock
+
+# Carthage
+Carthage/Build/
+
+# Swift Package Manager
+.swiftpm/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+
+# Archives
+*.xcarchive
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# SwiftPM binaries
+.build/
+
+# Dependency manager logs
+Cartfile.resolved
+Package.resolved
+
+# User-specific files
+*.swp
+*.swo
+*~
+
+# IDEs
+.idea/
+.vscode/
+
+# macOS files
+.DS_Store
+
+# Xcode Cloud
+.xcresults/
+
+# CI
+.env
+*.xcresult
+
+# Log files
+*.log
