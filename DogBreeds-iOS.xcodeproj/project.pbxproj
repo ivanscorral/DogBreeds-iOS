@@ -24,6 +24,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EF1A3F472DEF6E020027E109 /* DogBreeds-iOSTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DogBreeds-iOSTests.xctestplan"; sourceTree = "<group>"; };
 		EFB7F86D2DEDDDCC00CAA746 /* DogBreeds-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DogBreeds-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB7F87A2DEDDDCF00CAA746 /* DogBreeds-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DogBreeds-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB7F8842DEDDDCF00CAA746 /* DogBreeds-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DogBreeds-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +71,7 @@
 		EFB7F8642DEDDDCC00CAA746 = {
 			isa = PBXGroup;
 			children = (
+				EF1A3F472DEF6E020027E109 /* DogBreeds-iOSTests.xctestplan */,
 				EFB7F86F2DEDDDCC00CAA746 /* DogBreeds-iOS */,
 				EFB7F87D2DEDDDCF00CAA746 /* DogBreeds-iOSTests */,
 				EFB7F86E2DEDDDCC00CAA746 /* Products */,

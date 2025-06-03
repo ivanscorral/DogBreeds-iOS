@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "134BEB1E-BEEF-4CBD-A12A-985D6360CA73",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:DogBreeds-iOS.xcodeproj",
+        "identifier" : "EFB7F8792DEDDDCF00CAA746",
+        "name" : "DogBreeds-iOSTests"
+      }
+    }
+  ],
+  "version" : 1
+}
