@@ -10,7 +10,7 @@ import Foundation
 @Observable
 class BreedDetailViewModel {
     private let breed: Breed
-    private let apiService = BreedsAPIService.shared
+    private let apiService: BreedAPIProtocol
     
     var isLoading: Bool = false
     var imageURL: URL? = nil
@@ -18,8 +18,9 @@ class BreedDetailViewModel {
     var name: String { breed.name.capitalized }
     var subBreeds: [String] { breed.subBreeds.map { $0.capitalized } }
     
-    init(breed: Breed) {
+    init(breed: Breed, apiService: BreedAPIProtocol = BreedsAPIService.shared) {
         self.breed = breed
+        self.apiService = apiService
     }
     
     func loadImage() async {

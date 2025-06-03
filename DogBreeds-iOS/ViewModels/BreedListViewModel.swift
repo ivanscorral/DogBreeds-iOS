@@ -24,13 +24,17 @@ final class BreedListViewModel {
         }
     }
     
-    private let apiService = BreedsAPIService.shared
+    private let apiService: BreedAPIProtocol
+    
+    init(apiService: BreedAPIProtocol = BreedsAPIService.shared) {
+        self.apiService = apiService
+    }
     
     func loadBreeds() async {
         guard breeds.isEmpty else { return }
         isLoading = true
         do {
-            let fetchedBreeds = try await apiService.fetchAllBreeds()
+            let fetchedBreeds = try await apiService.fetchBreeds()
             breeds = fetchedBreeds
         } catch {
             print("Error fetching breeds: \(error)")
