@@ -14,11 +14,7 @@ final class BreedListViewModelTests: XCTestCase {
     private var mockService: BreedsAPIServiceMock!
     private var sut: BreedListViewModel!
     
-    private let mockBreeds: [Breed] = [
-        .init(name: "labrador", subBreeds: ["golden", "black"]),
-        .init(name: "poodle", subBreeds: ["standard", "miniature", "toy"]),
-        .init(name: "bulldog", subBreeds: []),
-    ]
+    private let mockBreeds: [Breed] = .mock
     
     override func setUp() {
         super.setUp()

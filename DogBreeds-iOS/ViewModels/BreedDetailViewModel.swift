@@ -27,8 +27,8 @@ class BreedDetailViewModel {
         isLoading = true
        
         do {
-            let url = try await apiService.fetchImage(for: breed.name)
-            imageURL = URL(string: url)!
+            let url = try await apiService.fetchImageURL(for: breed.name)
+            imageURL = URL(string: url)
         } catch {
             print("Failed to fetch image: \(error)")
             imageURL = nil

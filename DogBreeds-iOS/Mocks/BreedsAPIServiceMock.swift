@@ -6,7 +6,6 @@
 //
 
 import Foundation
-@testable import DogBreeds_iOS
 
 final class BreedsAPIServiceMock: BreedAPIProtocol {
     var breeds: [Breed] = []
@@ -16,7 +15,7 @@ final class BreedsAPIServiceMock: BreedAPIProtocol {
         breeds
     }
     
-    func fetchImage(for breedName: String) async throws -> String {
+    func fetchImageURL(for breedName: String) async throws -> String {
         images[breedName] ?? ""
     }
 }

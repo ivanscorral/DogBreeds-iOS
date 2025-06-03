@@ -15,10 +15,10 @@ struct BreedDetailView: View {
         static let spacing: CGFloat = 16
     }
     
-    let breedDetailViewModel: BreedDetailViewModel
+    @State var breedDetailViewModel: BreedDetailViewModel
     
-    init(breed: Breed) {
-        self.breedDetailViewModel = .init(breed: breed)
+    init(viewModel: BreedDetailViewModel) {
+        _breedDetailViewModel = State(initialValue: viewModel)
     }
     
     var body: some View {
@@ -63,5 +63,5 @@ struct BreedDetailView: View {
     }
 }
 #Preview {
-    BreedDetailView(breed: .mock)
+    BreedDetailView(viewModel: .init(breed: .mock1, apiService: BreedsAPIServiceMock()))
 }

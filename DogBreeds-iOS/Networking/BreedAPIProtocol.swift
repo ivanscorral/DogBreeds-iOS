@@ -9,5 +9,5 @@ import Foundation
 
 protocol BreedAPIProtocol {
     func fetchBreeds() async throws -> [Breed]
-    func fetchImage(for breedName: String) async throws -> String
+    func fetchImageURL(for breedName: String) async throws -> String
 }

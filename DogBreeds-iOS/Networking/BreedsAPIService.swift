@@ -22,7 +22,7 @@ final class BreedsAPIService: BreedAPIProtocol {
         }
     }
     
-    func fetchImage(for breedName: String) async throws -> String {
+    func fetchImageURL(for breedName: String) async throws -> String {
         let url = URL(string: "https://dog.ceo/api/breed/\(breedName)/images/random")!
         let (data, _) = try await URLSession.shared.data(from: url)
         let decoded = try JSONDecoder().decode(BreedImageResponse.self, from: data)

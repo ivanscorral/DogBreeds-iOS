@@ -12,6 +12,7 @@ final class BreedListViewModel {
     var breeds: [Breed] = []
     var isLoading: Bool = false
     var searchText: String = ""
+    var errorMessage: String?
     
     var filteredBreeds: [Breed] {
         guard !searchText.isEmpty else {
@@ -36,8 +37,10 @@ final class BreedListViewModel {
         do {
             let fetchedBreeds = try await apiService.fetchBreeds()
             breeds = fetchedBreeds
+            errorMessage = nil
         } catch {
             print("Error fetching breeds: \(error)")
+            errorMessage = "Error fetching breeds. Please try again later."
             breeds = []
         }
         isLoading = false
