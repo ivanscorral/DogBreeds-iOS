@@ -13,7 +13,6 @@
   },
   "testTargets" : [
     {
-      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:DogBreeds-iOS.xcodeproj",
         "identifier" : "EFB7F8792DEDDDCF00CAA746",
