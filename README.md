@@ -1,6 +1,6 @@
 # DogBreeds-iOS
 
-DogBreeds-iOS is a simple SwiftUI app that displays a list of dog breeds using data from the Dog CEO API. Users can browse breeds, search by name, and view details, with random images in a modal presentation.
+DogBreeds-iOS is a simple SwiftUI app that displays a list of dog breeds using data from the [Dog CEO API](https://dog.ceo/dog-api/). Users can browse breeds, search by name, and view details, with random images in a modal presentation.
 
 ## 📦 Project Structure
 
