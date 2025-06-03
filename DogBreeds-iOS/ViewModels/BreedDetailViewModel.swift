@@ -14,6 +14,7 @@ class BreedDetailViewModel {
     
     var isLoading: Bool = false
     var imageURL: URL? = nil
+    var errorMessage: String?
     
     var name: String { breed.name.capitalized }
     var subBreeds: [String] { breed.subBreeds.map { $0.capitalized } }
@@ -28,10 +29,13 @@ class BreedDetailViewModel {
        
         do {
             let url = try await apiService.fetchImageURL(for: breed.name)
-            imageURL = URL(string: url)
+            guard let imageURL = URL(string: url) else {
+                throw URLError(.badURL)
+            }
+            self.imageURL = imageURL
         } catch {
-            print("Failed to fetch image: \(error)")
             imageURL = nil
+            errorMessage = "Error fetching image. Please try again"
         }
         
         isLoading = false

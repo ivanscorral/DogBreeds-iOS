@@ -19,7 +19,14 @@ struct BreedListView: View {
         NavigationStack {
             Group {
                 if let error = viewModel.errorMessage {
-                    ErrorView(error: error)
+                    VStack {
+                        ErrorView(error: error)
+                        Button("Retry") {
+                            Task {
+                                await viewModel.loadBreeds()
+                            }
+                        }
+                    }
                 } else if viewModel.isLoading {
                     ProgressView("Loading breeds...")
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -50,5 +57,5 @@ struct BreedListView: View {
 }
 
 #Preview {
-    BreedListView(viewModel: .mockLoaded)
+    BreedListView(viewModel: .mock)
 }

@@ -8,10 +8,10 @@
 import Foundation
 
 extension BreedListViewModel {
-    static var mockLoaded: BreedListViewModel {
-        let viewModel = BreedListViewModel()
-        viewModel.breeds = .mock
+    static var mock: BreedListViewModel {
+        let mockApiService = BreedsAPIServiceMock()
+        mockApiService.breeds = .mock
+        let viewModel = BreedListViewModel(apiService: mockApiService)
         return viewModel
     }
 }
-

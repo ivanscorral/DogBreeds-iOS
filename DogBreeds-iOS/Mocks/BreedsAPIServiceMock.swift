@@ -16,6 +16,6 @@ final class BreedsAPIServiceMock: BreedAPIProtocol {
     }
     
     func fetchImageURL(for breedName: String) async throws -> String {
-        images[breedName] ?? ""
+        return images[breedName] ?? ""
     }
 }

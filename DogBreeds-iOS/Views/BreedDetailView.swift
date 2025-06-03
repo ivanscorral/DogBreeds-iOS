@@ -24,13 +24,10 @@ struct BreedDetailView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(spacing: ViewTraits.spacing) {
-                    Text(breedDetailViewModel.name)
-                        .font(.largeTitle)
-                        .bold()
-                        .multilineTextAlignment(.center)
-                    
-                    if let url = breedDetailViewModel.imageURL {
+                if let errorMessage = breedDetailViewModel.errorMessage {
+                    ErrorView(error: errorMessage)
+                } else if let url = breedDetailViewModel.imageURL {
+                    VStack(alignment: .leading, spacing: ViewTraits.spacing) {
                         AsyncImage(url: url) { image in
                             image
                                 .resizable()
@@ -40,14 +37,20 @@ struct BreedDetailView: View {
                             ProgressView()
                         }
                         .frame(maxWidth: .infinity)
-                    } else {
-                        ProgressView("Loading image...")
+                        Text(breedDetailViewModel.name)
+                            .font(.largeTitle)
+                            .bold()
+                            .multilineTextAlignment(.center)
+                        PlaceholderText()
+                        Spacer()
                     }
-                    Spacer()
+                    .padding()
+                    
+                } else {
+                    ProgressView("Loading image...")
                 }
-                .padding()
             }
-            .navigationTitle("Breed Details")
+            .navigationTitle("Details")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -63,5 +66,5 @@ struct BreedDetailView: View {
     }
 }
 #Preview {
-    BreedDetailView(viewModel: .init(breed: .mock1, apiService: BreedsAPIServiceMock()))
+    BreedDetailView(viewModel: .init(breed: .mock1))
 }

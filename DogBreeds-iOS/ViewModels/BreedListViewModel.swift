@@ -25,7 +25,7 @@ final class BreedListViewModel {
         }
     }
     
-    private let apiService: BreedAPIProtocol
+    let apiService: BreedAPIProtocol
     
     init(apiService: BreedAPIProtocol = BreedsAPIService.shared) {
         self.apiService = apiService
@@ -37,7 +37,6 @@ final class BreedListViewModel {
         do {
             let fetchedBreeds = try await apiService.fetchBreeds()
             breeds = fetchedBreeds
-            errorMessage = nil
         } catch {
             print("Error fetching breeds: \(error)")
             errorMessage = "Error fetching breeds. Please try again later."

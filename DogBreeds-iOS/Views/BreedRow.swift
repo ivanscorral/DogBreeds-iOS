@@ -14,12 +14,6 @@ struct BreedRow: View {
         HStack {
             VStack(alignment: .leading) {
                 Text(breed.fullName)
-                    .font(.title)
-                if breed.hasSubBreeds {
-                    Text("\(breed.subBreeds.count) subbreeds")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                }
             }
             Spacer()
         }
